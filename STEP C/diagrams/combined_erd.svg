@@ -1,0 +1,300 @@
+<svg viewBox="0 0 1400 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">
+    Combined Integrated ERD - Aviation &amp; Warehouse Systems
+  </text>
+  
+  <!-- Aviation System Section Header -->
+  <rect x="50" y="50" width="600" height="25" fill="#2196f3" opacity="0.2"/>
+  <text x="60" y="67" font-weight="bold" font-size="14" fill="#1976d2">AVIATION SYSTEM</text>
+  
+  <!-- Warehouse System Section Header -->
+  <rect x="750" y="50" width="600" height="25" fill="#4caf50" opacity="0.2"/>
+  <text x="760" y="67" font-weight="bold" font-size="14" fill="#388e3c">WAREHOUSE SYSTEM</text>
+  
+  <!-- Integration Section Header -->
+  <rect x="400" y="750" width="600" height="25" fill="#ff5722" opacity="0.2"/>
+  <text x="410" y="767" font-weight="bold" font-size="14" fill="#d84315">INTEGRATION LAYER</text>
+  
+  <!-- AVIATION ENTITIES -->
+  
+  <!-- Producer Entity -->
+  <g id="producer-entity">
+    <rect x="80" y="100" width="100" height="80" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+    <text x="130" y="115" text-anchor="middle" font-weight="bold" font-size="12" fill="#1976d2">Producer</text>
+    <line x1="85" y1="120" x2="175" y2="120" stroke="#1976d2"/>
+    <text x="85" y="132" font-size="8" fill="#333">• producer_id (PK)</text>
+    <text x="85" y="142" font-size="8" fill="#333">• pname</text>
+    <text x="85" y="152" font-size="8" fill="#333">• est_date</text>
+    <text x="85" y="162" font-size="8" fill="#333">• owner</text>
+  </g>
+  
+  <!-- Hub Entity -->
+  <g id="hub-entity">
+    <rect x="250" y="100" width="100" height="80" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="5"/>
+    <text x="300" y="115" text-anchor="middle" font-weight="bold" font-size="12" fill="#4caf50">Hub</text>
+    <line x1="255" y1="120" x2="345" y2="120" stroke="#4caf50"/>
+    <text x="255" y="132" font-size="8" fill="#333">• hub_id (PK)</text>
+    <text x="255" y="142" font-size="8" fill="#333">• name</text>
+    <text x="255" y="152" font-size="8" fill="#333">• location</text>
+    <text x="255" y="162" font-size="8" fill="#333">• iata_code</text>
+  </g>
+  
+  <!-- Operator Entity -->
+  <g id="operator-entity">
+    <rect x="420" y="100" width="100" height="90" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="5"/>
+    <text x="470" y="115" text-anchor="middle" font-weight="bold" font-size="12" fill="#ff9800">Operator</text>
+    <line x1="425" y1="120" x2="515" y2="120" stroke="#ff9800"/>
+    <text x="425" y="132" font-size="8" fill="#333">• operator_id (PK)</text>
+    <text x="425" y="142" font-size="8" fill="#333">• name</text>
+    <text x="425" y="152" font-size="8" fill="#333">• type</text>
+    <text x="425" y="162" font-size="8" fill="#333">• fleet_size</text>
+    <text x="425" y="172" font-size="8" fill="#333">• hub_id (FK)</text>
+  </g>
+  
+  <!-- Hangar Entity -->
+  <g id="hangar-entity">
+    <rect x="80" y="250" width="100" height="90" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="5"/>
+    <text x="130" y="265" text-anchor="middle" font-weight="bold" font-size="12" fill="#e91e63">Hangar</text>
+    <line x1="85" y1="270" x2="175" y2="270" stroke="#e91e63"/>
+    <text x="85" y="282" font-size="8" fill="#333">• hangar_id (PK)</text>
+    <text x="85" y="292" font-size="8" fill="#333">• location</text>
+    <text x="85" y="302" font-size="8" fill="#333">• name</text>
+    <text x="85" y="312" font-size="8" fill="#333">• warehouse_id (FK)</text>
+    <text x="85" y="322" font-size="8" fill="#d84315">↑ INTEGRATION</text>
+  </g>
+  
+  <!-- Plane Entity -->
+  <g id="plane-entity">
+    <rect x="250" y="250" width="120" height="120" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="5"/>
+    <text x="310" y="265" text-anchor="middle" font-weight="bold" font-size="12" fill="#9c27b0">Plane</text>
+    <line x1="255" y1="270" x2="365" y2="270" stroke="#9c27b0"/>
+    <text x="255" y="282" font-size="8" fill="#333">• plane_id (PK)</text>
+    <text x="255" y="292" font-size="8" fill="#333">• model</text>
+    <text x="255" y="302" font-size="8" fill="#333">• production_date</text>
+    <text x="255" y="312" font-size="8" fill="#333">• capacity</text>
+    <text x="255" y="322" font-size="8" fill="#333">• max_altitude</text>
+    <text x="255" y="332" font-size="8" fill="#333">• max_distance</text>
+    <text x="255" y="342" font-size="8" fill="#333">• status</text>
+    <text x="255" y="352" font-size="8" fill="#333">• producer_id (FK)</text>
+    <text x="255" y="362" font-size="8" fill="#333">• hangar_id (FK)</text>
+  </g>
+  
+  <!-- Pilot Entity -->
+  <g id="pilot-entity">
+    <rect x="420" y="250" width="100" height="110" fill="#e1f5fe" stroke="#0277bd" stroke-width="2" rx="5"/>
+    <text x="470" y="265" text-anchor="middle" font-weight="bold" font-size="12" fill="#0277bd">Pilot</text>
+    <line x1="425" y1="270" x2="515" y2="270" stroke="#0277bd"/>
+    <text x="425" y="282" font-size="8" fill="#333">• pilot_id (PK)</text>
+    <text x="425" y="292" font-size="8" fill="#333">• name</text>
+    <text x="425" y="302" font-size="8" fill="#333">• license_num</text>
+    <text x="425" y="312" font-size="8" fill="#333">• rank</text>
+    <text x="425" y="322" font-size="8" fill="#333">• experience</text>
+    <text x="425" y="332" font-size="8" fill="#333">• operator_id (FK)</text>
+    <text x="425" y="342" font-size="8" fill="#333">• employee_id (FK)</text>
+    <text x="425" y="352" font-size="8" fill="#d84315">↑ INTEGRATION</text>
+  </g>
+  
+  <!-- WAREHOUSE ENTITIES -->
+  
+  <!-- Warehouse Entity -->
+  <g id="warehouse-entity">
+    <rect x="800" y="120" width="120" height="90" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="5"/>
+    <text x="860" y="135" text-anchor="middle" font-weight="bold" font-size="12" fill="#4caf50">Warehouse</text>
+    <line x1="805" y1="140" x2="915" y2="140" stroke="#4caf50"/>
+    <text x="805" y="152" font-size="8" fill="#333">• warehouse_id (PK)</text>
+    <text x="805" y="162" font-size="8" fill="#333">• location</text>
+    <text x="805" y="172" font-size="8" fill="#333">• capacity</text>
+    <text x="805" y="182" font-size="8" fill="#333">• open_date</text>
+  </g>
+  
+  <!-- Employee Entity -->
+  <g id="employee-entity">
+    <rect x="1000" y="120" width="120" height="100" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="5"/>
+    <text x="1060" y="135" text-anchor="middle" font-weight="bold" font-size="12" fill="#ff9800">Employee</text>
+    <line x1="1005" y1="140" x2="1115" y2="140" stroke="#ff9800"/>
+    <text x="1005" y="152" font-size="8" fill="#333">• employee_id (PK)</text>
+    <text x="1005" y="162" font-size="8" fill="#333">• name</text>
+    <text x="1005" y="172" font-size="8" fill="#333">• role</text>
+    <text x="1005" y="182" font-size="8" fill="#333">• start_date</text>
+    <text x="1005" y="192" font-size="8" fill="#333">• last_training</text>
+  </g>
+  
+  <!-- Part Entity -->
+  <g id="part-entity">
+    <rect x="800" y="300" width="100" height="80" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="5"/>
+    <text x="850" y="315" text-anchor="middle" font-weight="bold" font-size="12" fill="#e91e63">Part</text>
+    <line x1="805" y1="320" x2="895" y2="320" stroke="#e91e63"/>
+    <text x="805" y="332" font-size="8" fill="#333">• part_id (PK)</text>
+    <text x="805" y="342" font-size="8" fill="#333">• name</text>
+    <text x="805" y="352" font-size="8" fill="#333">• last_update</text>
+  </g>
+  
+  <!-- Supplier Entity -->
+  <g id="supplier-entity">
+    <rect x="1000" y="300" width="100" height="80" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="5"/>
+    <text x="1050" y="315" text-anchor="middle" font-weight="bold" font-size="12" fill="#9c27b0">Supplier</text>
+    <line x1="1005" y1="320" x2="1095" y2="320" stroke="#9c27b0"/>
+    <text x="1005" y="332" font-size="8" fill="#333">• supplier_id (PK)</text>
+    <text x="1005" y="342" font-size="8" fill="#333">• name</text>
+    <text x="1005" y="352" font-size="8" fill="#333">• phone</text>
+  </g>
+  
+  <!-- Customer Entity -->
+  <g id="customer-entity">
+    <rect x="1200" y="200" width="120" height="90" fill="#e1f5fe" stroke="#0277bd" stroke-width="2" rx="5"/>
+    <text x="1260" y="215" text-anchor="middle" font-weight="bold" font-size="12" fill="#0277bd">Customer</text>
+    <line x1="1205" y1="220" x2="1315" y2="220" stroke="#0277bd"/>
+    <text x="1205" y="232" font-size="8" fill="#333">• customer_id (PK)</text>
+    <text x="1205" y="242" font-size="8" fill="#333">• phone</text>
+    <text x="1205" y="252" font-size="8" fill="#333">• email</text>
+    <text x="1205" y="262" font-size="8" fill="#333">• registration_date</text>
+  </g>
+  
+  <!-- Train Entity -->
+  <g id="train-entity">
+    <rect x="800" y="450" width="100" height="100" fill="#ffebee" stroke="#f44336" stroke-width="2" rx="5"/>
+    <text x="850" y="465" text-anchor="middle" font-weight="bold" font-size="12" fill="#f44336">Train</text>
+    <line x1="805" y1="470" x2="895" y2="470" stroke="#f44336"/>
+    <text x="805" y="482" font-size="8" fill="#333">• train_id (PK)</text>
+    <text x="805" y="492" font-size="8" fill="#333">• model</text>
+    <text x="805" y="502" font-size="8" fill="#333">• year</text>
+    <text x="805" y="512" font-size="8" fill="#333">• last_check</text>
+    <text x="805" y="522" font-size="8" fill="#333">• warehouse_id (FK)</text>
+  </g>
+  
+  <!-- INTEGRATION ENTITIES -->
+  
+  <!-- Aircraft_Parts Entity -->
+  <g id="aircraft-parts-entity">
+    <rect x="450" y="800" width="140" height="120" fill="#ffecb3" stroke="#ffa000" stroke-width="3" rx="5"/>
+    <text x="520" y="815" text-anchor="middle" font-weight="bold" font-size="12" fill="#ef6c00">Aircraft_Parts</text>
+    <line x1="455" y1="820" x2="585" y2="820" stroke="#ffa000"/>
+    <text x="455" y="832" font-size="8" fill="#333">• aircraft_part_id (PK)</text>
+    <text x="455" y="842" font-size="8" fill="#333">• plane_id (FK)</text>
+    <text x="455" y="852" font-size="8" fill="#333">• part_id (FK)</text>
+    <text x="455" y="862" font-size="8" fill="#333">• quantity_used</text>
+    <text x="455" y="872" font-size="8" fill="#333">• installation_date</text>
+    <text x="455" y="882" font-size="8" fill="#333">• next_maintenance</text>
+    <text x="455" y="892" font-size="8" fill="#333">• status</text>
+    <text x="455" y="905" font-size="8" font-weight="bold" fill="#d84315">BRIDGE TABLE</text>
+  </g>
+  
+  <!-- Maintenance_Record Entity -->
+  <g id="maintenance-entity">
+    <rect x="650" y="800" width="140" height="140" fill="#c8e6c9" stroke="#388e3c" stroke-width="3" rx="5"/>
+    <text x="720" y="815" text-anchor="middle" font-weight="bold" font-size="12" fill="#1b5e20">Maintenance_Record</text>
+    <line x1="655" y1="820" x2="785" y2="820" stroke="#388e3c"/>
+    <text x="655" y="832" font-size="8" fill="#333">• maintenance_id (PK)</text>
+    <text x="655" y="842" font-size="8" fill="#333">• plane_id (FK)</text>
+    <text x="655" y="852" font-size="8" fill="#333">• employee_id (FK)</text>
+    <text x="655" y="862" font-size="8" fill="#333">• warehouse_id (FK)</text>
+    <text x="655" y="872" font-size="8" fill="#333">• maintenance_date</text>
+    <text x="655" y="882" font-size="8" fill="#333">• maintenance_type</text>
+    <text x="655" y="892" font-size="8" fill="#333">• cost</text>
+    <text x="655" y="902" font-size="8" fill="#333">• description</text>
+    <text x="655" y="912" font-size="8" fill="#333">• completed</text>
+    <text x="655" y="925" font-size="8" font-weight="bold" fill="#d84315">SERVICE TRACKING</text>
+  </g>
+  
+  <!-- Unified_Location Entity -->
+  <g id="location-entity">
+    <rect x="850" y="800" width="120" height="100" fill="#e1bee7" stroke="#8e24aa" stroke-width="3" rx="5"/>
+    <text x="910" y="815" text-anchor="middle" font-weight="bold" font-size="12" fill="#4a148c">Unified_Location</text>
+    <line x1="855" y1="820" x2="965" y2="820" stroke="#8e24aa"/>
+    <text x="855" y="832" font-size="8" fill="#333">• location_id (PK)</text>
+    <text x="855" y="842" font-size="8" fill="#333">• location_name</text>
+    <text x="855" y="852" font-size="8" fill="#333">• city</text>
+    <text x="855" y="862" font-size="8" fill="#333">• country</text>
+    <text x="855" y="872" font-size="8" fill="#333">• location_type</text>
+    <text x="855" y="885" font-size="8" font-weight="bold" fill="#d84315">UNIFIED GEOGRAPHY</text>
+  </g>
+  
+  <!-- KEY RELATIONSHIPS AND CONNECTIONS -->
+  
+  <!-- Aviation System Relationships -->
+  <line x1="350" y1="140" x2="420" y2="140" stroke="#666" stroke-width="2"/>
+  <text x="380" y="135" font-size="8" fill="#666">operates from</text>
+  
+  <line x1="180" y1="140" x2="250" y2="300" stroke="#666" stroke-width="2"/>
+  <text x="200" y="210" font-size="8" fill="#666">produces</text>
+  
+  <line x1="180" y1="290" x2="250" y2="310" stroke="#666" stroke-width="2"/>
+  <text x="200" y="300" font-size="8" fill="#666">stored in</text>
+  
+  <line x1="370" y1="310" x2="420" y2="310" stroke="#666" stroke-width="2"/>
+  <text x="390" y="305" font-size="8" fill="#666">operates</text>
+  
+  <!-- Warehouse System Relationships -->
+  <line x1="920" y1="165" x2="1000" y2="170" stroke="#666" stroke-width="2"/>
+  <text x="950" y="165" font-size="8" fill="#666">works at</text>
+  
+  <line x1="850" y1="210" x2="850" y2="300" stroke="#666" stroke-width="2"/>
+  <text x="860" y="250" font-size="8" fill="#666">stores</text>
+  
+  <line x1="900" y1="340" x2="1000" y2="340" stroke="#666" stroke-width="2"/>
+  <text x="940" y="335" font-size="8" fill="#666">supplies</text>
+  
+  <line x1="850" y1="380" x2="850" y2="450" stroke="#666" stroke-width="2"/>
+  <text x="860" y="415" font-size="8" fill="#666">operates</text>
+  
+  <!-- Integration Connections -->
+  
+  <!-- Plane to Aircraft_Parts -->
+  <line x1="310" y1="370" x2="520" y2="800" stroke="#ff5722" stroke-width="3" stroke-dasharray="5,5"/>
+  <text x="400" y="580" font-size="9" font-weight="bold" fill="#d84315">INTEGRATION</text>
+  
+  <!-- Part to Aircraft_Parts -->
+  <line x1="850" y1="380" x2="520" y2="800" stroke="#ff5722" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Plane to Maintenance -->
+  <line x1="370" y1="350" x2="720" y2="800" stroke="#ff5722" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Employee to Maintenance -->
+  <line x1="1060" y1="220" x2="720" y2="800" stroke="#ff5722" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Warehouse to Maintenance -->
+  <line x1="860" y1="210" x2="720" y2="800" stroke="#ff5722" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Hangar to Warehouse (Enhancement) -->
+  <line x1="180" y1="295" x2="800" y2="165" stroke="#ff5722" stroke-width="3" stroke-dasharray="3,3"/>
+  <text x="450" y="220" font-size="9" font-weight="bold" fill="#d84315">ENHANCED FK</text>
+  
+  <!-- Pilot to Employee (Enhancement) -->
+  <line x1="520" y1="305" x2="1000" y2="170" stroke="#ff5722" stroke-width="3" stroke-dasharray="3,3"/>
+  <text x="750" y="230" font-size="9" font-weight="bold" fill="#d84315">CROSS-REFERENCE</text>
+  
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="50" y="600" width="300" height="120" fill="white" stroke="#ccc" stroke-width="1"/>
+    <text x="60" y="620" font-weight="bold" font-size="12" fill="#333">Integration Legend:</text>
+    
+    <line x1="60" y1="635" x2="90" y2="635" stroke="#ff5722" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="95" y="639" font-size="10" fill="#333">Bridge Table Connection</text>
+    
+    <line x1="60" y1="650" x2="90" y2="650" stroke="#ff5722" stroke-width="3" stroke-dasharray="3,3"/>
+    <text x="95" y="654" font-size="10" fill="#333">Enhanced Foreign Key</text>
+    
+    <line x1="60" y1="665" x2="90" y2="665" stroke="#666" stroke-width="2"/>
+    <text x="95" y="669" font-size="10" fill="#333">Original Relationship</text>
+    
+    <rect x="60" y="680" width="40" height="20" fill="#ffecb3" stroke="#ffa000" stroke-width="2"/>
+    <text x="110" y="693" font-size="10" fill="#333">Integration Entity</text>
+  </g>
+  
+  <!-- Integration Benefits Box -->
+  <g id="benefits">
+    <rect x="1050" y="600" width="300" height="150" fill="#f0f8ff" stroke="#1976d2" stroke-width="2"/>
+    <text x="1060" y="620" font-weight="bold" font-size="12" fill="#1976d2">Integration Benefits:</text>
+    <text x="1060" y="640" font-size="10" fill="#333">• Unified maintenance tracking</text>
+    <text x="1060" y="655" font-size="10" fill="#333">• Cross-system personnel</text>
+    <text x="1060" y="670" font-size="10" fill="#333">• Parts-to-aircraft linking</text>
+    <text x="1060" y="685" font-size="10" fill="#333">• Cost and service tracking</text>
+    <text x="1060" y="700" font-size="10" fill="#333">• Facility co-location</text>
+    <text x="1060" y="715" font-size="10" fill="#333">• Unified location management</text>
+    <text x="1060" y="730" font-size="10" fill="#333">• Business intelligence</text>
+  </g>
+</svg>

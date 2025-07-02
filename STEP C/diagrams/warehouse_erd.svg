@@ -1,0 +1,181 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+    Warehouse System ERD (Reverse Engineered)
+  </text>
+  
+  <!-- Part Entity -->
+  <g id="part-entity">
+    <rect x="50" y="80" width="120" height="100" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+    <text x="110" y="100" text-anchor="middle" font-weight="bold" font-size="14" fill="#1976d2">Part</text>
+    <line x1="60" y1="105" x2="160" y2="105" stroke="#1976d2"/>
+    <text x="55" y="120" font-size="10" fill="#333">• part_id (PK)</text>
+    <text x="55" y="135" font-size="10" fill="#333">• name</text>
+    <text x="55" y="150" font-size="10" fill="#333">• last_update</text>
+  </g>
+  
+  <!-- Employee Entity -->
+  <g id="employee-entity">
+    <rect x="220" y="80" width="120" height="120" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="5"/>
+    <text x="280" y="100" text-anchor="middle" font-weight="bold" font-size="14" fill="#4caf50">Employee</text>
+    <line x1="230" y1="105" x2="330" y2="105" stroke="#4caf50"/>
+    <text x="225" y="120" font-size="10" fill="#333">• employee_id (PK)</text>
+    <text x="225" y="135" font-size="10" fill="#333">• name</text>
+    <text x="225" y="150" font-size="10" fill="#333">• role</text>
+    <text x="225" y="165" font-size="10" fill="#333">• start_date</text>
+    <text x="225" y="180" font-size="10" fill="#333">• last_training</text>
+  </g>
+  
+  <!-- Warehouse Entity -->
+  <g id="warehouse-entity">
+    <rect x="500" y="150" width="120" height="120" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="5"/>
+    <text x="560" y="170" text-anchor="middle" font-weight="bold" font-size="14" fill="#ff9800">Warehouse</text>
+    <line x1="510" y1="175" x2="610" y2="175" stroke="#ff9800"/>
+    <text x="505" y="190" font-size="10" fill="#333">• warehouse_id (PK)</text>
+    <text x="505" y="205" font-size="10" fill="#333">• location</text>
+    <text x="505" y="220" font-size="10" fill="#333">• capacity</text>
+    <text x="505" y="235" font-size="10" fill="#333">• open_date</text>
+  </g>
+  
+  <!-- Supplier Entity -->
+  <g id="supplier-entity">
+    <rect x="50" y="300" width="120" height="100" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="5"/>
+    <text x="110" y="320" text-anchor="middle" font-weight="bold" font-size="14" fill="#e91e63">Supplier</text>
+    <line x1="60" y1="325" x2="160" y2="325" stroke="#e91e63"/>
+    <text x="55" y="340" font-size="10" fill="#333">• supplier_id (PK)</text>
+    <text x="55" y="355" font-size="10" fill="#333">• name</text>
+    <text x="55" y="370" font-size="10" fill="#333">• phone</text>
+  </g>
+  
+  <!-- Customer Entity -->
+  <g id="customer-entity">
+    <rect x="700" y="300" width="120" height="120" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="5"/>
+    <text x="760" y="320" text-anchor="middle" font-weight="bold" font-size="14" fill="#9c27b0">Customer</text>
+    <line x1="710" y1="325" x2="810" y2="325" stroke="#9c27b0"/>
+    <text x="705" y="340" font-size="10" fill="#333">• customer_id (PK)</text>
+    <text x="705" y="355" font-size="10" fill="#333">• phone</text>
+    <text x="705" y="370" font-size="10" fill="#333">• email</text>
+    <text x="705" y="385" font-size="10" fill="#333">• registration_date</text>
+  </g>
+  
+  <!-- Train Entity -->
+  <g id="train-entity">
+    <rect x="900" y="150" width="120" height="120" fill="#e1f5fe" stroke="#0277bd" stroke-width="2" rx="5"/>
+    <text x="960" y="170" text-anchor="middle" font-weight="bold" font-size="14" fill="#0277bd">Train</text>
+    <line x1="910" y1="175" x2="1010" y2="175" stroke="#0277bd"/>
+    <text x="905" y="190" font-size="10" fill="#333">• train_id (PK)</text>
+    <text x="905" y="205" font-size="10" fill="#333">• model</text>
+    <text x="905" y="220" font-size="10" fill="#333">• year</text>
+    <text x="905" y="235" font-size="10" fill="#333">• last_check</text>
+    <text x="905" y="250" font-size="10" fill="#333">• next_check</text>
+  </g>
+  
+  <!-- Relationships -->
+  
+  <!-- WorksAt Relationship -->
+  <g id="worksat-rel">
+    <diamond cx="400" cy="140" r="40" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+    <text x="400" y="145" text-anchor="middle" font-size="10" font-weight="bold" fill="#f44336">WorksAt</text>
+  </g>
+  
+  <!-- WarehouseParts Relationship -->
+  <g id="warehouseparts-rel">
+    <diamond cx="300" cy="230" r="45" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+    <text x="300" y="225" text-anchor="middle" font-size="9" font-weight="bold" fill="#f44336">Warehouse</text>
+    <text x="300" y="238" text-anchor="middle" font-size="9" font-weight="bold" fill="#f44336">Parts</text>
+  </g>
+  
+  <!-- SupplierParts Relationship -->
+  <g id="supplierparts-rel">
+    <diamond cx="110" cy="220" r="40" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+    <text x="110" y="215" text-anchor="middle" font-size="9" font-weight="bold" fill="#f44336">Supplier</text>
+    <text x="110" y="228" text-anchor="middle" font-size="9" font-weight="bold" fill="#f44336">Parts</text>
+  </g>
+  
+  <!-- CustomerStorage Relationship -->
+  <g id="storage-rel">
+    <diamond cx="600" cy="300" r="45" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+    <text x="600" y="295" text-anchor="middle" font-size="9" font-weight="bold" fill="#f44336">Customer</text>
+    <text x="600" y="308" text-anchor="middle" font-size="9" font-weight="bold" fill="#f44336">Storage</text>
+  </g>
+  
+  <!-- Train-Warehouse Relationship -->
+  <g id="operates-rel">
+    <diamond cx="750" cy="210" r="35" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+    <text x="750" y="215" text-anchor="middle" font-size="10" font-weight="bold" fill="#f44336">Operates</text>
+  </g>
+  
+  <!-- Connection Lines -->
+  
+  <!-- Employee to WorksAt -->
+  <line x1="340" y1="140" x2="360" y2="140" stroke="#333" stroke-width="2"/>
+  <text x="345" y="135" font-size="8" fill="#666">M</text>
+  
+  <!-- WorksAt to Warehouse -->
+  <line x1="440" y1="140" x2="500" y2="200" stroke="#333" stroke-width="2"/>
+  <text x="460" y="165" font-size="8" fill="#666">N</text>
+  
+  <!-- Part to WarehouseParts -->
+  <line x1="170" y1="160" x2="255" y2="210" stroke="#333" stroke-width="2"/>
+  <text x="195" y="180" font-size="8" fill="#666">M</text>
+  
+  <!-- WarehouseParts to Warehouse -->
+  <line x1="345" y1="230" x2="500" y2="210" stroke="#333" stroke-width="2"/>
+  <text x="420" y="220" font-size="8" fill="#666">N</text>
+  
+  <!-- Part to SupplierParts -->
+  <line x1="110" y1="180" x2="110" y2="180" stroke="#333" stroke-width="2"/>
+  <text x="85" y="195" font-size="8" fill="#666">M</text>
+  
+  <!-- SupplierParts to Supplier -->
+  <line x1="110" y1="260" x2="110" y2="300" stroke="#333" stroke-width="2"/>
+  <text x="85" y="280" font-size="8" fill="#666">N</text>
+  
+  <!-- Warehouse to CustomerStorage -->
+  <line x1="620" y1="250" x2="600" y2="255" stroke="#333" stroke-width="2"/>
+  <text x="610" y="250" font-size="8" fill="#666">M</text>
+  
+  <!-- CustomerStorage to Customer -->
+  <line x1="645" y1="300" x2="700" y2="350" stroke="#333" stroke-width="2"/>
+  <text x="670" y="325" font-size="8" fill="#666">N</text>
+  
+  <!-- Warehouse to Operates -->
+  <line x1="620" y1="210" x2="715" y2="210" stroke="#333" stroke-width="2"/>
+  <text x="660" y="205" font-size="8" fill="#666">1</text>
+  
+  <!-- Operates to Train -->
+  <line x1="785" y1="210" x2="900" y2="210" stroke="#333" stroke-width="2"/>
+  <text x="840" y="205" font-size="8" fill="#666">M</text>
+  
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="50" y="500" width="300" height="150" fill="none" stroke="#ccc" stroke-width="1"/>
+    <text x="60" y="520" font-weight="bold" font-size="12" fill="#333">Legend:</text>
+    <text x="60" y="540" font-size="10" fill="#333">• PK = Primary Key</text>
+    <text x="60" y="555" font-size="10" fill="#333">• M:N = Many-to-Many Relationship</text>
+    <text x="60" y="570" font-size="10" fill="#333">• 1:M = One-to-Many Relationship</text>
+    
+    <diamond cx="80" cy="590" r="15" fill="#ffebee" stroke="#f44336" stroke-width="1"/>
+    <text x="100" y="595" font-size="10" fill="#333">Relationship</text>
+    
+    <rect x="60" y="605" width="40" height="25" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+    <text x="110" y="620" font-size="10" fill="#333">Entity</text>
+  </g>
+  
+  <!-- Helper function for diamond -->
+  <defs>
+    <g id="diamond-template">
+      <polygon points="0,-20 20,0 0,20 -20,0"/>
+    </g>
+  </defs>
+  
+  <!-- Redraw diamonds using polygon -->
+  <polygon points="400,100 440,140 400,180 360,140" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+  <polygon points="300,185 345,230 300,275 255,230" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+  <polygon points="110,180 150,220 110,260 70,220" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+  <polygon points="600,255 645,300 600,345 555,300" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+  <polygon points="750,175 785,210 750,245 715,210" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+</svg>

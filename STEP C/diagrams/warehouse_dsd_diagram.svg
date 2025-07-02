@@ -1,0 +1,262 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+    Warehouse System DSD (Database Schema Diagram)
+  </text>
+  
+  <!-- Part Table -->
+  <g id="part-table">
+    <rect x="50" y="80" width="180" height="120" fill="white" stroke="#1976d2" stroke-width="2" rx="5"/>
+    <rect x="50" y="80" width="180" height="30" fill="#1976d2"/>
+    <text x="140" y="100" text-anchor="middle" font-weight="bold" font-size="14" fill="white">Part</text>
+    
+    <text x="55" y="120" font-size="11" font-weight="bold" fill="#333">🔑 part_id: INT (PK)</text>
+    <text x="55" y="135" font-size="11" fill="#333">name: VARCHAR(100)</text>
+    <text x="55" y="150" font-size="11" fill="#333">last_update: DATE</text>
+    
+    <text x="55" y="175" font-size="9" fill="#666">Stores information about</text>
+    <text x="55" y="188" font-size="9" fill="#666">parts available in system</text>
+  </g>
+  
+  <!-- Employee Table -->
+  <g id="employee-table">
+    <rect x="280" y="80" width="200" height="140" fill="white" stroke="#4caf50" stroke-width="2" rx="5"/>
+    <rect x="280" y="80" width="200" height="30" fill="#4caf50"/>
+    <text x="380" y="100" text-anchor="middle" font-weight="bold" font-size="14" fill="white">employee</text>
+    
+    <text x="285" y="120" font-size="11" font-weight="bold" fill="#333">🔑 employee_id: INT (PK)</text>
+    <text x="285" y="135" font-size="11" fill="#333">name: VARCHAR(100)</text>
+    <text x="285" y="150" font-size="11" fill="#333">role: VARCHAR(50)</text>
+    <text x="285" y="165" font-size="11" fill="#333">start_date: DATE</text>
+    <text x="285" y="180" font-size="11" fill="#333">last_training: DATE</text>
+    
+    <text x="285" y="205" font-size="9" fill="#666">Employee records with</text>
+    <text x="285" y="218" font-size="9" fill="#666">roles and training data</text>
+  </g>
+  
+  <!-- Warehouse Table -->
+  <g id="warehouse-table">
+    <rect x="530" y="80" width="180" height="140" fill="white" stroke="#ff9800" stroke-width="2" rx="5"/>
+    <rect x="530" y="80" width="180" height="30" fill="#ff9800"/>
+    <text x="620" y="100" text-anchor="middle" font-weight="bold" font-size="14" fill="white">Warehouse</text>
+    
+    <text x="535" y="120" font-size="11" font-weight="bold" fill="#333">🔑 warehouse_id: INT (PK)</text>
+    <text x="535" y="135" font-size="11" fill="#333">location: VARCHAR(100)</text>
+    <text x="535" y="150" font-size="11" fill="#333">capacity: INT</text>
+    <text x="535" y="165" font-size="11" fill="#333">open_date: DATE</text>
+    
+    <text x="535" y="190" font-size="9" fill="#666">Warehouse locations with</text>
+    <text x="535" y="203" font-size="9" fill="#666">capacity information</text>
+  </g>
+  
+  <!-- Supplier Table -->
+  <g id="supplier-table">
+    <rect x="50" y="280" width="180" height="120" fill="white" stroke="#e91e63" stroke-width="2" rx="5"/>
+    <rect x="50" y="280" width="180" height="30" fill="#e91e63"/>
+    <text x="140" y="300" text-anchor="middle" font-weight="bold" font-size="14" fill="white">supplier</text>
+    
+    <text x="55" y="320" font-size="11" font-weight="bold" fill="#333">🔑 supplier_id: INT (PK)</text>
+    <text x="55" y="335" font-size="11" fill="#333">name: VARCHAR(100)</text>
+    <text x="55" y="350" font-size="11" fill="#333">phone: VARCHAR(20)</text>
+    
+    <text x="55" y="375" font-size="9" fill="#666">Supplier contact</text>
+    <text x="55" y="388" font-size="9" fill="#666">information</text>
+  </g>
+  
+  <!-- Customer Table -->
+  <g id="customer-table">
+    <rect x="530" y="280" width="180" height="140" fill="white" stroke="#9c27b0" stroke-width="2" rx="5"/>
+    <rect x="530" y="280" width="180" height="30" fill="#9c27b0"/>
+    <text x="620" y="300" text-anchor="middle" font-weight="bold" font-size="14" fill="white">Costumer</text>
+    
+    <text x="535" y="320" font-size="11" font-weight="bold" fill="#333">🔑 costumer_id: INT (PK)</text>
+    <text x="535" y="335" font-size="11" fill="#333">phone: VARCHAR(20)</text>
+    <text x="535" y="350" font-size="11" fill="#333">email: VARCHAR(100)</text>
+    <text x="535" y="365" font-size="11" fill="#333">registration_date: DATE</text>
+    
+    <text x="535" y="390" font-size="9" fill="#666">Customer information</text>
+    <text x="535" y="403" font-size="9" fill="#666">and registration data</text>
+  </g>
+  
+  <!-- Train Table -->
+  <g id="train-table">
+    <rect x="760" y="280" width="180" height="160" fill="white" stroke="#0277bd" stroke-width="2" rx="5"/>
+    <rect x="760" y="280" width="180" height="30" fill="#0277bd"/>
+    <text x="850" y="300" text-anchor="middle" font-weight="bold" font-size="14" fill="white">Train</text>
+    
+    <text x="765" y="320" font-size="11" font-weight="bold" fill="#333">🔑 train_id: INT (PK)</text>
+    <text x="765" y="335" font-size="11" fill="#333">model: VARCHAR(50)</text>
+    <text x="765" y="350" font-size="11" fill="#333">year: INT</text>
+    <text x="765" y="365" font-size="11" fill="#333">last_check: DATE</text>
+    <text x="765" y="380" font-size="11" fill="#333">next_check: DATE</text>
+    <text x="765" y="395" font-size="11" font-weight="bold" fill="#d84315">🔗 warehouse_id: INT (FK)</text>
+    
+    <text x="765" y="420" font-size="9" fill="#666">Train fleet with</text>
+    <text x="765" y="433" font-size="9" fill="#666">maintenance schedules</text>
+  </g>
+  
+  <!-- Relationship Tables -->
+  
+  <!-- WorksAt Table -->
+  <g id="worksat-table">
+    <rect x="280" y="280" width="200" height="120" fill="#fff9c4" stroke="#f57f17" stroke-width="2" rx="5"/>
+    <rect x="280" y="280" width="200" height="30" fill="#f57f17"/>
+    <text x="380" y="300" text-anchor="middle" font-weight="bold" font-size="14" fill="white">WorksAt</text>
+    
+    <text x="285" y="320" font-size="11" font-weight="bold" fill="#d84315">🔗 warehouse_id: INT (FK)</text>
+    <text x="285" y="335" font-size="11" font-weight="bold" fill="#d84315">🔗 employee_id: INT (FK)</text>
+    <text x="285" y="350" font-size="11" font-weight="bold" fill="#333">🔑 PK: (warehouse_id, employee_id)</text>
+    
+    <text x="285" y="375" font-size="9" fill="#666">M:N Employee-Warehouse</text>
+    <text x="285" y="388" font-size="9" fill="#666">assignment relationship</text>
+  </g>
+  
+  <!-- WarehouseParts Table -->
+  <g id="warehouseparts-table">
+    <rect x="280" y="450" width="220" height="140" fill="#fff9c4" stroke="#f57f17" stroke-width="2" rx="5"/>
+    <rect x="280" y="450" width="220" height="30" fill="#f57f17"/>
+    <text x="390" y="470" text-anchor="middle" font-weight="bold" font-size="14" fill="white">WarehouseParts</text>
+    
+    <text x="285" y="490" font-size="11" fill="#333">wQuantity: INT</text>
+    <text x="285" y="505" font-size="11" fill="#333">last_updated: DATE</text>
+    <text x="285" y="520" font-size="11" font-weight="bold" fill="#d84315">🔗 part_id: INT (FK)</text>
+    <text x="285" y="535" font-size="11" font-weight="bold" fill="#d84315">🔗 warehouse_id: INT (FK)</text>
+    <text x="285" y="550" font-size="11" font-weight="bold" fill="#333">🔑 PK: (part_id, warehouse_id)</text>
+    
+    <text x="285" y="575" font-size="9" fill="#666">M:N Part-Warehouse with</text>
+    <text x="285" y="588" font-size="9" fill="#666">quantity tracking</text>
+  </g>
+  
+  <!-- SupplierParts Table -->
+  <g id="supplierparts-table">
+    <rect x="50" y="450" width="200" height="140" fill="#fff9c4" stroke="#f57f17" stroke-width="2" rx="5"/>
+    <rect x="50" y="450" width="200" height="30" fill="#f57f17"/>
+    <text x="150" y="470" text-anchor="middle" font-weight="bold" font-size="14" fill="white">SupplierParts</text>
+    
+    <text x="55" y="490" font-size="11" fill="#333">price: DECIMAL(10,2)</text>
+    <text x="55" y="505" font-size="11" fill="#333">sQuantity: INT</text>
+    <text x="55" y="520" font-size="11" font-weight="bold" fill="#d84315">🔗 supplier_id: INT (FK)</text>
+    <text x="55" y="535" font-size="11" font-weight="bold" fill="#d84315">🔗 part_id: INT (FK)</text>
+    <text x="55" y="550" font-size="11" font-weight="bold" fill="#333">🔑 PK: (supplier_id, part_id)</text>
+    
+    <text x="55" y="575" font-size="9" fill="#666">M:N Supplier-Part with</text>
+    <text x="55" y="588" font-size="9" fill="#666">pricing information</text>
+  </g>
+  
+  <!-- myorder Table -->
+  <g id="order-table">
+    <rect x="550" y="450" width="200" height="180" fill="white" stroke="#795548" stroke-width="2" rx="5"/>
+    <rect x="550" y="450" width="200" height="30" fill="#795548"/>
+    <text x="650" y="470" text-anchor="middle" font-weight="bold" font-size="14" fill="white">myorder</text>
+    
+    <text x="555" y="490" font-size="11" font-weight="bold" fill="#333">🔑 order_id: INT (PK)</text>
+    <text x="555" y="505" font-size="11" fill="#333">amount: INT</text>
+    <text x="555" y="520" font-size="11" fill="#333">order_date: DATE</text>
+    <text x="555" y="535" font-size="11" fill="#333">arrival_date: DATE</text>
+    <text x="555" y="550" font-size="11" font-weight="bold" fill="#d84315">🔗 part_id: INT (FK)</text>
+    <text x="555" y="565" font-size="11" font-weight="bold" fill="#d84315">🔗 supplier_id: INT (FK)</text>
+    <text x="555" y="580" font-size="11" font-weight="bold" fill="#d84315">🔗 warehouse_id: INT (FK)</text>
+    
+    <text x="555" y="605" font-size="9" fill="#666">Order transactions linking</text>
+    <text x="555" y="618" font-size="9" fill="#666">suppliers, parts, warehouses</text>
+  </g>
+  
+  <!-- CostumerWarehousStorage Table -->
+  <g id="storage-table">
+    <rect x="780" y="450" width="240" height="140" fill="#fff9c4" stroke="#f57f17" stroke-width="2" rx="5"/>
+    <rect x="780" y="450" width="240" height="30" fill="#f57f17"/>
+    <text x="900" y="470" text-anchor="middle" font-weight="bold" font-size="14" fill="white">CostumerWarehousStorage</text>
+    
+    <text x="785" y="490" font-size="11" fill="#333">start_date: DATE</text>
+    <text x="785" y="505" font-size="11" fill="#333">end_date: DATE</text>
+    <text x="785" y="520" font-size="11" font-weight="bold" fill="#d84315">🔗 warehouse_id: INT (FK)</text>
+    <text x="785" y="535" font-size="11" font-weight="bold" fill="#d84315">🔗 costumer_id: INT (FK)</text>
+    <text x="785" y="550" font-size="11" font-weight="bold" fill="#333">🔑 PK: (warehouse_id, costumer_id)</text>
+    
+    <text x="785" y="575" font-size="9" fill="#666">M:N Customer-Warehouse storage</text>
+  </g>
+  
+  <!-- Foreign Key Relationships -->
+  
+  <!-- Employee to WorksAt -->
+  <line x1="380" y1="220" x2="380" y2="280" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="376,276 380,280 384,276" fill="#f57f17"/>
+  
+  <!-- Warehouse to WorksAt -->
+  <line x1="530" y1="150" x2="480" y2="340" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="476,336 480,340 484,336" fill="#f57f17"/>
+  
+  <!-- Part to WarehouseParts -->
+  <line x1="140" y1="200" x2="350" y2="450" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="346,446 350,450 354,446" fill="#f57f17"/>
+  
+  <!-- Warehouse to WarehouseParts -->
+  <line x1="620" y1="220" x2="430" y2="450" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="426,446 430,450 434,446" fill="#f57f17"/>
+  
+  <!-- Part to SupplierParts -->
+  <line x1="140" y1="200" x2="140" y2="450" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="136,446 140,450 144,446" fill="#f57f17"/>
+  
+  <!-- Supplier to SupplierParts -->
+  <line x1="140" y1="400" x2="140" y2="450" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="136,446 140,450 144,446" fill="#f57f17"/>
+  
+  <!-- Warehouse to Train -->
+  <line x1="710" y1="150" x2="760" y2="350" stroke="#0277bd" stroke-width="2"/>
+  <polygon points="756,346 760,350 764,346" fill="#0277bd"/>
+  
+  <!-- Customer to Storage -->
+  <line x1="710" y1="360" x2="780" y2="520" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="776,516 780,520 784,516" fill="#f57f17"/>
+  
+  <!-- Warehouse to Storage -->
+  <line x1="620" y1="220" x2="850" y2="450" stroke="#f57f17" stroke-width="2"/>
+  <polygon points="846,446 850,450 854,446" fill="#f57f17"/>
+  
+  <!-- Orders connections -->
+  <line x1="230" y1="340" x2="550" y2="520" stroke="#795548" stroke-width="2"/>
+  <polygon points="546,516 550,520 554,516" fill="#795548"/>
+  
+  <line x1="230" y1="160" x2="550" y2="550" stroke="#795548" stroke-width="2"/>
+  <polygon points="546,546 550,550 554,546" fill="#795548"/>
+  
+  <line x1="620" y1="220" x2="650" y2="450" stroke="#795548" stroke-width="2"/>
+  <polygon points="646,446 650,450 654,446" fill="#795548"/>
+  
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="50" y="650" width="400" height="150" fill="white" stroke="#ccc" stroke-width="1"/>
+    <text x="60" y="670" font-weight="bold" font-size="14" fill="#333">Database Schema Legend:</text>
+    
+    <text x="60" y="690" font-size="11" fill="#333">🔑 Primary Key (PK)</text>
+    <text x="60" y="705" font-size="11" fill="#d84315">🔗 Foreign Key (FK)</text>
+    
+    <rect x="60" y="715" width="40" height="20" fill="white" stroke="#1976d2" stroke-width="2"/>
+    <text x="110" y="728" font-size="10" fill="#333">Entity Table</text>
+    
+    <rect x="60" y="740" width="40" height="20" fill="#fff9c4" stroke="#f57f17" stroke-width="2"/>
+    <text x="110" y="753" font-size="10" fill="#333">Relationship Table</text>
+    
+    <line x1="240" y1="725" x2="280" y2="725" stroke="#f57f17" stroke-width="2"/>
+    <polygon points="276,721 280,725 276,729" fill="#f57f17"/>
+    <text x="290" y="729" font-size="10" fill="#333">Foreign Key Reference</text>
+    
+    <text x="60" y="780" font-size="10" fill="#666">This DSD shows the complete table structure with all</text>
+    <text x="60" y="793" font-size="10" fill="#666">primary keys, foreign keys, and relationships.</text>
+  </g>
+  
+  <!-- Schema Statistics -->
+  <g id="stats">
+    <rect x="500" y="650" width="250" height="120" fill="#f0f8ff" stroke="#1976d2" stroke-width="1"/>
+    <text x="510" y="670" font-weight="bold" font-size="12" fill="#1976d2">Schema Statistics:</text>
+    <text x="510" y="690" font-size="11" fill="#333">• 7 Main Tables</text>
+    <text x="510" y="705" font-size="11" fill="#333">• 4 Relationship Tables</text>
+    <text x="510" y="720" font-size="11" fill="#333">• 8 Foreign Key References</text>
+    <text x="510" y="735" font-size="11" fill="#333">• 4 Many-to-Many Relationships</text>
+    <text x="510" y="750" font-size="11" fill="#333">• 1 One-to-Many Relationship</text>
+  </g>
+</svg>
